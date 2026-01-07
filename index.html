@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eng. Abdifatah Maaw | Software Developer</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* ================= VARIABLES ================= */
+      :root {
+        --primary: #38bdf8;
+        --secondary: #22d3ee;
+        --accent1: #f472b6;
+        --accent2: #facc15;
+        --dark: #020617;
+        --light: #f8fafc;
+        --glass: rgba(255, 255, 255, 0.08);
+      }
+
+      /* ================= RESET ================= */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        color: var(--light);
+        background: linear-gradient(-45deg, #020617, #0f172a, #0ea5e9, #9333ea);
+        background-size: 400% 400%;
+        animation: gradientBG 18s ease infinite;
+        overflow-x: hidden;
+      }
+
+      /* ================= BACKGROUND ANIMATION ================= */
+      @keyframes gradientBG {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      /* Floating shapes */
+      .bg-shapes span {
+        position: fixed;
+        width: 20px;
+        height: 20px;
+        background: rgba(255, 255, 255, 0.15);
+        animation: float 20s linear infinite;
+        border-radius: 50%;
+        z-index: -1;
+      }
+
+      .bg-shapes span:nth-child(1) {
+        left: 10%;
+        animation-duration: 25s;
+      }
+      .bg-shapes span:nth-child(2) {
+        left: 30%;
+        width: 35px;
+        height: 35px;
+        animation-duration: 30s;
+      }
+      .bg-shapes span:nth-child(3) {
+        left: 50%;
+        animation-duration: 22s;
+      }
+      .bg-shapes span:nth-child(4) {
+        left: 70%;
+        width: 40px;
+        height: 40px;
+        animation-duration: 28s;
+      }
+      .bg-shapes span:nth-child(5) {
+        left: 90%;
+        animation-duration: 26s;
+      }
+
+      @keyframes float {
+        0% {
+          bottom: -100px;
+          transform: translateX(0) rotate(0deg);
+        }
+        100% {
+          bottom: 110%;
+          transform: translateX(80px) rotate(360deg);
+        }
+      }
+
+      /* ================= NAV ================= */
+      .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 25px 8%;
+      }
+
+      .logo {
+        font-size: 1.8rem;
+        font-weight: 700;
+      }
+      .logo span {
+        color: var(--accent2);
+      }
+
+      .nav ul {
+        display: flex;
+        list-style: none;
+        gap: 25px;
+      }
+
+      .nav a {
+        color: var(--light);
+        text-decoration: none;
+      }
+
+      .nav a:hover {
+        color: var(--primary);
+      }
+
+      .nav-btn {
+        background: var(--primary);
+        padding: 8px 20px;
+        border-radius: 20px;
+        color: #000;
+      }
+
+      /* ================= HERO ================= */
+      .hero {
+        min-height: 100vh;
+        text-align: center;
+        padding: 120px 20px;
+      }
+
+      /* PROFILE */
+      .profile-pic {
+        width: 180px;
+        height: 180px;
+        margin: auto;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 5px solid var(--accent2);
+        box-shadow: 0 0 40px rgba(250, 204, 21, 0.7);
+      }
+
+      .profile-pic img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .hero h1 {
+        font-size: 3.2rem;
+        margin-top: 25px;
+      }
+
+      .hero p {
+        font-size: 1.3rem;
+        margin: 15px 0 30px;
+        opacity: 0.9;
+      }
+
+      .primary-btn {
+        background: linear-gradient(135deg, var(--accent1), var(--accent2));
+        padding: 14px 40px;
+        border-radius: 30px;
+        text-decoration: none;
+        color: #000;
+        font-weight: 600;
+        display: inline-block;
+        transition: 0.3s;
+      }
+
+      .primary-btn:hover {
+        transform: translateY(-5px);
+      }
+
+      /* ================= SECTIONS ================= */
+      .section {
+        padding: 100px 8%;
+        text-align: center;
+        background: rgba(2, 6, 23, 0.75);
+      }
+
+      .section-title {
+        font-size: 2.6rem;
+        margin-bottom: 25px;
+      }
+
+      .section-text {
+        max-width: 750px;
+        margin: auto;
+        opacity: 0.85;
+      }
+
+      /* ================= CARDS ================= */
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 30px;
+        margin-top: 60px;
+      }
+
+      .glass-card {
+        background: var(--glass);
+        backdrop-filter: blur(16px);
+        padding: 40px;
+        border-radius: 18px;
+        transition: 0.4s;
+      }
+
+      .glass-card:hover {
+        transform: translateY(-12px);
+      }
+
+      /* ================= SKILLS ================= */
+      .skills {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 40px;
+      }
+
+      .skills span {
+        background: linear-gradient(135deg, var(--primary), var(--accent1));
+        padding: 10px 20px;
+        border-radius: 20px;
+        color: #000;
+      }
+
+      /* ================= PORTFOLIO ================= */
+      .portfolio-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+        margin-top: 60px;
+      }
+
+      .project-card {
+        height: 200px;
+        background: linear-gradient(135deg, var(--accent1), var(--accent2));
+        border-radius: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        color: #000;
+      }
+
+      /* ================= FOOTER ================= */
+      .footer {
+        padding: 30px;
+        text-align: center;
+        background: rgba(2, 6, 23, 0.9);
+        font-size: 0.9rem;
+      }
+
+      /* ================= RESPONSIVE ================= */
+      @media (max-width: 768px) {
+        .hero h1 {
+          font-size: 2.3rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- BACKGROUND SHAPES -->
+    <div class="bg-shapes">
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <!-- NAV -->
+    <nav class="nav">
+      <h2 class="logo">Abdifatah<span>.</span></h2>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact" class="nav-btn">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="profile-pic">
+        <img
+          src="piture/WhatsApp Image 2026-01-07 at 4.06.54 AM.jpeg"
+          alt="Eng Abdifatah Maaw"
+        />
+      </div>
+      <h1>Eng. Abdifatah Maaw</h1>
+      <p>Frontend • Backend • Mobile App Developer</p>
+      <a href="#portfolio" class="primary-btn">View My Work</a>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <h2 class="section-title">About Me</h2>
+      <p class="section-text">
+        Professional software developer specialized in frontend, backend, and
+        mobile applications.
+      </p>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="section">
+      <h2 class="section-title">Services</h2>
+      <div class="cards">
+        <div class="glass-card">Frontend Development</div>
+        <div class="glass-card">Backend Development</div>
+        <div class="glass-card">Mobile App Development</div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section id="portfolio" class="section">
+      <h2 class="section-title">Portfolio</h2>
+      <div class="portfolio-grid">
+        <div class="project-card">Project One</div>
+        <div class="project-card">Project Two</div>
+        <div class="project-card">Project Three</div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">© 2026 Eng. Abdifatah Maaw</footer>
+  </body>
+</html>
